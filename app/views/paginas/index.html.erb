@@ -1,0 +1,25 @@
+<h1>Listing paginas</h1>
+
+<table>
+  <tr>
+    <th>Titulo</th>
+    <th>Descripcion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @paginas.each do |pagina| %>
+  <tr>
+    <td><%= pagina.titulo %></td>
+    <td><%= pagina.descripcion %></td>
+    <td><%= link_to 'Show', pagina %></td>
+    <td><%= link_to 'Edit', edit_pagina_path(pagina) %></td>
+    <td><%= link_to 'Destroy', pagina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pagina', new_pagina_path %>
