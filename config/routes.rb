@@ -1,5 +1,7 @@
 Abogadosrpr::Application.routes.draw do
 
+  resources :preguntas
+
   resources :contactos
 
   resources :documentos

@@ -1,0 +1,88 @@
+<div class="jumbotron subhead">
+  <div class="container">
+    <h1>Preguntas</h1>
+    <p class="lead">Inteligencia Artificial de Preguntas</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="span8">
+
+
+      <!-- INTELIGENCIA ARTIFICIAL
+      =================================================-->
+      <section>
+        <div class="page-header">
+          <h1>Inteligencia A. <small> Ing Edgar Taya</small></h1>          
+        </div>        
+        <div class="well">
+          <div class="row-fluid">
+            <div class="span4">
+              <%= image_tag "user_icon2.jpg" %>
+            </div>
+            <div class="span8">
+              <%= form_for(preguntas_path, :method => "get") do |f| %>
+                <%= text_field_tag :search, params[:search] %>                
+              <% end %>
+              <h2>¿<%= @titulo %> ?</h2>
+              <p class="lead"><%= @contenido %></p>              
+            </div>
+          </div>                    
+        </div>
+        <div class="well">
+          <%= link_to raw('<i class="icon-home icon-white"></i> Home'), preguntas_path, :class=>"btn btn-primary"  %>
+          <%= link_to raw('<i class="icon-lock"></i> Nueva'), new_pregunta_path, :class=> "btn" %>
+          <%= link_to raw('<i class="icon-edit"></i> Editar'), "/preguntas/#{@idp}/edit", :class=>"btn" %>
+          </div>
+      </section>
+
+    
+    </div>
+    <div class="span4">
+
+
+      <!-- Informacion Abogados RpR 
+        ===============================================   -->
+        <section>
+          <div class="page-header">
+            <h1>Informacion</h1>
+          </div>
+          <table class="table table-bordered table-condensed">
+            <tr>
+              <td>
+                <%= image_tag "rolando_portada2.png" %>
+              </td>
+            </tr>             
+            <tr>
+              <td>                   
+                <dt>Nombre y Profesion</dt>
+                  <dd>Rolando J Prado Reyes</dd>                    
+                  <dd>ABOGADO</dd>
+              </td>
+            </tr>               
+            <tr>
+              <td>
+                <dt>Correos</dt>
+                <dd>Abogadostacna@gmail.com</dd>
+                <dd>rolandoprado2009@hotmail.com</dd>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <dt>Telefonos</dt>
+                <dd>RPM #976557200</dd>
+                <dd>RPC 946692854</dd>
+                <dd>Nextel 99 835*9404</dd>
+                <dd>fono 411616</dd>
+              </td>
+            </tr>
+          </table>          
+        </section>
+    </div>
+  </div>
+
+
+
+</div>
