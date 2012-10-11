@@ -9,6 +9,11 @@ class PreguntasController < ApplicationController
     @titulo     = @preguntas[0]['titulo']
     @contenido  = @preguntas[0]['contenido']
 
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @preguntas }
+    end
+
 
     #@preguntas = Pregunta.all   
   end
