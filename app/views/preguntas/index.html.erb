@@ -22,9 +22,9 @@
             <div class="span4">
               <%= image_tag "user_icon2.jpg" %>
             </div>
-            <div class="span8">
-              <%= form_for(preguntas_path, :method => "get") do |f| %>
-                <%= text_field_tag :search, params[:search] %>                
+            <div class="span8">              
+              <%= form_for(preguntas_path, :html=>{:class=>"form-search"}, :method => "get") do |f| %>
+                <%= text_field_tag :search, params[:search], :class =>"input-large search-query" %>               
               <% end %>
               <h2>¿<%= @titulo %> ?</h2>
               <p class="lead"><%= @contenido %></p>              
