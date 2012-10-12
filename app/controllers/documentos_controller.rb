@@ -1,6 +1,7 @@
 class DocumentosController < ApplicationController
   # GET /documentos
   # GET /documentos.json
+  layout 'admin'
   def index
     @documentos = Documento.all
 

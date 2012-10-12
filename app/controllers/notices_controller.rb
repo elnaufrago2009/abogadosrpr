@@ -1,6 +1,7 @@
 class NoticesController < ApplicationController
-  # GET /notices
-  # GET /notices.json
+
+  layout 'admin'
+
   def index
     @notices = Notice.all
 

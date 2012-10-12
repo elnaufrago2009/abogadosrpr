@@ -1,0 +1,11 @@
+<% content_for :head_titulo do %>
+  <h1>Noticias</h1>
+  <p class="lead">Ultimas Noticias en el Sistema</p>
+<% end %>
+<section>
+	<div class="page-header"><h1><%= @notice.titulo %></h1></div>
+	<%= raw(@notice.descripcion) %>
+	<div class="pull-right">
+		<%= link_to raw("<i class='icon-arrow-left icon-white'></i> Atraz"), "/inicios/noticias", :class=>"btn btn-primary" %>
+	</div>
+</section>

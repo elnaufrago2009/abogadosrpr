@@ -1,6 +1,7 @@
 class FotosController < ApplicationController
   # GET /fotos
   # GET /fotos.json
+  layout 'admin'
   def index
     @fotos = Foto.all
 

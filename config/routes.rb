@@ -1,20 +1,25 @@
-Abogadosrpr::Application.routes.draw do
+Abogadosrpr::Application.routes.draw do  
 
-  resources :preguntas
-
-  resources :contactos
-
-  resources :documentos
+  get "admin/index"
+  get "admin" => "admin#index"
 
   get "inicios/index"
-
   get "inicios"=>"inicios#index"
 
+  get "inicios/fotos"
+  get "inicios/contactos"
+  get "inicios/documentos"
+  get "inicios/noticias"
+  get "inicios/noticias_show/:id" => 'inicios#noticias_show'
+  get "inicios/paginas"
+
+  resources :preguntas
+  resources :contactos
+  resources :documentos
   resources :fotos
-
-  resources :paginas
-
   resources :notices
+  resources :paginas
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

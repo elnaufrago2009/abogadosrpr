@@ -8,11 +8,8 @@
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <%= stylesheet_link_tag "bootstrap" %>
-    
-    
-    <%= stylesheet_link_tag "docs" %>  
-
+    <%= stylesheet_link_tag "bootstrap" %>    
+    <%= stylesheet_link_tag "docs" %>
     <%= javascript_include_tag "jquery" %>
     <%= javascript_include_tag "jquery_ujs" %>
 
@@ -38,11 +35,11 @@
           <a class="brand" href="/">AbogadosRpR</a>
           <div class="nav-collapse collapse">
             <ul class="nav">              
-              <li class="active"><a href="/notices">Noticias</a></li>
-              <li class=""><a href="/paginas">Paginas</a></li>
-              <li class=""><a href="/documentos">Documentos</a></li>
-              <li class=""><a href="/fotos">Fotos</a></li>                            
-              <li class=""><a href="/contactos">Contacto</a></li>              
+              <li class="active"><a href="/inicios/noticias">Noticias</a></li>
+              <li class=""><a href="/inicios/paginas">Paginas</a></li>
+              <li class=""><a href="/inicios/documentos">Documentos</a></li>
+              <li class=""><a href="/inicios/fotos">Fotos</a></li>                            
+              <li class=""><a href="/inicios/contactos">Contacto</a></li>              
               <li class=""><a href="/preguntas">Preguntas</a></li>
             </ul>
             <ul class="nav pull-right">              
@@ -50,15 +47,49 @@
                 <a target="blank" href="http://69.73.179.244:2095/?login_theme=cpanel" >
                   <i class="icon-envelope icon-white"></i> Correo
                 </a>
-              </li>              
+              </li>
+              <li class="active">
+                <%= link_to raw("<i class='icon-lock icon-white'></i> Admin"), "/admin" %>
+              </li>
             </ul>
           </div>          
         </div>
       </div>
     </div>
 
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <div class="row">
+      <div class="span9">
+        <%= yield :head_titulo %>
+      </div>
+      <div class="span3">
+        <%= image_tag "rpr_asociados.png", :size => "140x140", :class => "pull-right" %>
+      </div>
+    </div>    
+  </div>
+</header>
 
-	<%= yield %>
+
+	
+
+
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span8">
+        <%= yield %>
+      </div>
+      <div class="span4">
+        <%= render :partial => "shared/sidebar" %>
+      </div>
+    </div>
+
+  </div><!-- end container -->
 
     <!-- Footer
     ================================================== -->

@@ -1,6 +1,9 @@
 class ContactosController < ApplicationController
   # GET /contactos
   # GET /contactos.json
+  layout 'admin'
+  
+
   def index
     @contactos = Contacto.all
 

@@ -1,33 +1,26 @@
-<div class="container">
-  <div class="row">
-    <div class="span8">
-<h1>Listing notices</h1>
-        <table>
-          <tr>
-            <th>Titulo</th>
-            <th>Descripcion</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
-
-        <% @notices.each do |notice| %>
-          <tr>
-            <td><%= notice.titulo %></td>
-            <td><%= notice.descripcion %></td>
-            <td><%= link_to 'Show', notice %></td>
-            <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
-            <td><%= link_to 'Destroy', notice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-        </table>
-        <br />
-        <%= link_to 'New Notice', new_notice_path %>
-    </div>
-    <div class="span4">
-
-    </div>      
+<section>
+  <div class="page-header">
+    <h1>Ultimas <small>Noticias Agregadas</small></h1>
   </div>
-</div>
-
-
+  <table class="table table-striped table-bordered">
+    <tr>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @notices.each do |notice| %>
+    <tr>
+      <td><%= notice.titulo[0,30] %></td>
+      <td><%= notice.descripcion[0,200] %></td>
+      <td><%= link_to 'Ver', notice, :class=>"btn" %></td>
+      <td><%= link_to 'Editar', edit_notice_path(notice), :class=>"btn" %></td>
+      <td><%= link_to 'Eliminar', notice, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn" %></td>
+    </tr>
+    <% end %>
+  </table>
+  <div class="well">
+    <%= link_to raw('<i class="icon-lock icon-white"></i> Nueva Noticia'), new_notice_path, :class=>"btn btn-primary" %>
+  </div>
+</section>
