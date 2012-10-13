@@ -1,7 +1,16 @@
 class IniciosController < ApplicationController
 
 	
-	def index		
+	def index
+
+		@documentos = Documento.all
+
+		@notices = Notice.all
+
+	    respond_to do |format|
+	      format.html # index.html.erb
+	      format.json { render json: @notices }
+	    end		
 	end
 
 	def noticias

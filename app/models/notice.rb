@@ -1,3 +1,3 @@
 class Notice < ActiveRecord::Base
-  attr_accessible :descripcion, :titulo
+  attr_accessible :descripcion, :titulo, :resumen
 end

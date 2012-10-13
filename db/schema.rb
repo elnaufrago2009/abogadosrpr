@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20121008191152) do
 
-  create_table "answers", :force => true do |t|
-    t.string   "pregunta"
-    t.text     "respuesta"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "contactos", :force => true do |t|
     t.string   "titulo"
     t.text     "contenido"
@@ -46,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20121008191152) do
 
   create_table "notices", :force => true do |t|
     t.string   "titulo"
+    t.string   "resumen"
     t.text     "descripcion"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

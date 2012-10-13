@@ -13,7 +13,11 @@
 
   <div class="field">
     <%= f.label :titulo %><br />
-    <%= f.text_field :titulo %>
+    <%= f.text_field :titulo, :class=>"span6" %>
+  </div>
+  <div class="controls">
+    <%= f.label :resumen %>
+    <%= f.text_area :resumen, :rows=>"5", :class=>"span6" %>
   </div>
   <div class="field">
     <label><%= f.label :descripcion %></label>  
